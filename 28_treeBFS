@@ -1,0 +1,48 @@
+let bfs = function (node) {
+  // TODO: 여기에 코드를 작성합니다.
+
+  // function collect(node) {
+  //   result.push(node.value)
+  // if(node.children.length === 0)
+  // {
+  //   return null
+  // }
+  //    node.children.forEach(el => collect(el))
+  // }
+  // let result = []
+  // collect(node)
+  // return result
+  // DFS
+  // 인접노드를 모두 탐색한 후, 다음 depth로 넘어가 탐색 뭔가 while 이랑 map 쓰면?
+  let queue = [node]; // 전체 노드 정보를 배열로 담음
+  const values = []; // 결과를 담은 변수
+  while (queue.length > 0) { // 더 이상 탐색할 노드가 없을 때 까지
+    const head = queue[0]; // root일 경우 tree를 else sub tree를
+    queue = queue.slice(1); // value이 담길 노드 정보를 제외하고 탐색 배열 재구성
+
+    values.push(head.value); // 각 노드의 value를 결과 배열에 담음
+
+    head.children.forEach((child) => queue.push(child)); // 자식노드 있을 경우 모든 자식노드 객체을 탐색할 배열에 담음
+  }
+  return values;
+
+};
+
+// 이 아래 코드는 변경하지 않아도 됩니다. 자유롭게 참고하세요.
+let Node = function (value) {
+  this.value = value;
+  this.children = [];
+  // {
+  //   value : value
+  //   children : [
+  //     child,chlid
+  //   ]
+  // }
+};
+
+// 위 Node 객체로 구성되는 트리는 매우 단순한 형태의 트리입니다.
+// membership check(중복 확인)를 따로 하지 않습니다.
+Node.prototype.addChild = function (child) {
+  this.children.push(child);
+  return child;
+};
