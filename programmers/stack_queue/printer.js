@@ -1,4 +1,3 @@
-
 function solution(priorities, location) {
     const result = [];
     const sorted = priorities.slice().sort();
