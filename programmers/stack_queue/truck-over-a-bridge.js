@@ -17,7 +17,7 @@ function solution(bridge_length, weight, truck_weights) {
         onWeight -= ing.shift()
         drivingTime.shift()  
     }
-
+    
     check = onWeight + next // 7
 
     if(check <= weight){ // 7 < 10
