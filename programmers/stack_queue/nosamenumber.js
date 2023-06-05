@@ -1,4 +1,4 @@
-function solution(arr)
+function solution(arr)//js
 {   
     var answer = [];
 
