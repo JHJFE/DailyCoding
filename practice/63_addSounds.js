@@ -1,6 +1,5 @@
 function solution(absolutes, signs) {
   return absolutes.reduce((acc, cur, i) => {
-    console.log(acc, cur, i)
     return signs[i] === true ? acc + cur : acc - cur
   }, 0)
 }
