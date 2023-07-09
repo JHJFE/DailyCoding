@@ -1,5 +1,3 @@
-const { toASCII } = require('punycode')
-
 function solution(n, arr1, arr2) {
   var answer = []
   for (let i = 0; i < n; i++) {
@@ -9,15 +7,9 @@ function solution(n, arr1, arr2) {
 
     for (let j = 0; j < n; j++) {
       let check = [line1 % 2, line2 % 2]
-      if (j === 0) {
-        console.log(line1, line2, 2 ** (n - j - 1), line1 < 2 ** (n - j - 1))
-      }
-      line1 < 2 ** (n - j - 1)
-        ? (check[0] = 0)
-        : (line1 = Math.floor(line1 / 2))
-      line2 < 2 ** (n - j - 1)
-        ? (check[1] = 0)
-        : (line2 = Math.floor(line2 / 2))
+
+      line1 = Math.floor(line1 / 2)
+      line2 = Math.floor(line2 / 2)
 
       check.includes(1) ? total.unshift('#') : total.unshift(' ')
     }
