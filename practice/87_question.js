@@ -5,7 +5,14 @@ function solution(n, lost, reserve) {
   for (let i = 0; i < reserve.length; i++) {
     data[reserve[i]] = true
   }
-  console.log(data)
+  lost = lost.filter((el) => {
+    if (data[el]) {
+      answer++
+      delete data[el]
+      return false
+    } else return true
+  })
+  lost = lost.sort()
   for (let i = 0; i < lost.length; i++) {
     if (data[lost[i] - 1]) {
       answer++
@@ -17,5 +24,5 @@ function solution(n, lost, reserve) {
   }
   return answer
 }
-let a = solution(5, [2, 4], [3])
+let a = solution(5, [1, 2, 3], [1, 3])
 console.log(a)
