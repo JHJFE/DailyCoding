@@ -10,8 +10,7 @@ function solution(arr) {
     { min: arr[0], minIndex: 0 }
   )
   arr.splice(lowest.minIndex, 1)
-  console.log(lowest)
-  return arr
+  return arr.length === 0 ? [-1] : arr
 }
 
 let a = solution([4, 3, 2, 1])
