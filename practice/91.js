@@ -12,7 +12,6 @@ function solution(strings, n) {
     } else if (strings[i][n] > piv[n]) {
       right.push(strings[i])
     } else {
-      console.log(strings[i], piv)
       piv > strings[i] ? left.push(strings[i]) : right.push(strings[i])
     }
   }
