@@ -13,7 +13,6 @@ function solution(n) {
       }
     }
   }
-  console.log(primeArr)
   primeArr.map((el) => (el ? answer++ : null))
   return answer
 }
